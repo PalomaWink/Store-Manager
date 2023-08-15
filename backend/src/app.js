@@ -1,4 +1,6 @@
 const express = require('express');
+// const route = require('express').Router();
+const { productsController } = require('./controllers');
 
 const app = express();
 
@@ -9,6 +11,6 @@ app.get('/', (_request, response) => {
   response.json({ status: 'Store Manager UP!' });
 });
 
-// Alteração para abertura de PR
+app.get('/products/:id', productsController.productsId);
 
 module.exports = app;
