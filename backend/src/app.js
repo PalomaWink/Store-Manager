@@ -11,6 +11,7 @@ app.get('/', (_request, response) => {
   response.json({ status: 'Store Manager UP!' });
 });
 
+app.get('/products', productsController.allProducts);
 app.get('/products/:id', productsController.productsId);
 
 module.exports = app;

@@ -8,6 +8,12 @@ const findByIdProducts = async (id) => {
   return { status: 200, data: products };
 };
 
+const findAllProducts = async () => {
+  const allProducts = await productsModel.findAllProducts();
+  return { status: 200, data: allProducts };
+};
+
 module.exports = {
     findByIdProducts,
+    findAllProducts,
 };

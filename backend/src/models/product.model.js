@@ -9,6 +9,14 @@ const findById = async (productId) => {
   return camelize(product);
 };
 
+const findAllProducts = async () => {
+  const [product] = await connection.execute(
+    'SELECT * FROM products',
+  );
+  return camelize(product);
+};
+
 module.exports = {
   findById,
+  findAllProducts,
 };
