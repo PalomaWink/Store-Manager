@@ -23,8 +23,14 @@ const returnMock = {
   data: productList,
 };
 
+const returnMockId = {
+  status: 200, 
+  data: productList[0],
+};
+
 module.exports = { 
   productList, 
   firstProduct,
   returnMock,
+  returnMockId,
 };
