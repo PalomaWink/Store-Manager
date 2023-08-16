@@ -19,6 +19,7 @@ describe('Realizando testes - PRODUCT MODEL', function () {
     expect(productId).to.be.an('object');
     expect(productId).to.be.deep.equal(firstProduct);
   });
+  
   afterEach(function () {
     sinon.restore();
   });
