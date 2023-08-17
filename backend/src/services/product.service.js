@@ -14,6 +14,7 @@ const findAllProducts = async () => {
 };
 
 const registerNewProduct = async (product) => {
+  console.log(product);
   const registerAProduct = await productsModel.insertNewProduct(product);
   return { status: 201, data: { id: registerAProduct, ...product } };
 };
