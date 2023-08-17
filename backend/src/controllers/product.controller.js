@@ -13,7 +13,16 @@ const allProducts = async (_req, res) => {
   return res.status(status).json(data);
 };
 
+const newProduct = async (req, res) => {
+  // console.log(name);
+  const { data, status } = await productsService.registerNewProduct(req.body);
+  console.log(data);
+  console.log(status);
+  return res.status(status).json(data);
+};
+
 module.exports = {
   productsId,
   allProducts,
+  newProduct,
 };

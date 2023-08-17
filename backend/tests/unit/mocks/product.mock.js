@@ -28,9 +28,14 @@ const returnMockId = {
   data: productList[0],
 };
 
+const registerNewProduct = {
+  name: 'Fishbones',
+};
+
 module.exports = { 
   productList, 
   firstProduct,
   returnMock,
   returnMockId,
+  registerNewProduct,
 };

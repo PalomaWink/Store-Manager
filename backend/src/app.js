@@ -15,5 +15,6 @@ app.get('/products', productsController.allProducts);
 app.get('/products/:id', productsController.productsId);
 app.get('/sales', salesController.allSales);
 app.get('/sales/:id', salesController.saleId);
+app.post('/products', productsController.newProduct);
 
 module.exports = app;
