@@ -32,10 +32,16 @@ const registerNewProduct = {
   name: 'Fishbones',
 };
 
+const returnMistakeName = { message: '"name" is required' };
+
+const returnMistakeNameLength = { message: '"name" length must be at least 5 characters long' };
+
 module.exports = { 
   productList, 
   firstProduct,
   returnMock,
   returnMockId,
   registerNewProduct,
+  returnMistakeName,
+  returnMistakeNameLength,
 };
