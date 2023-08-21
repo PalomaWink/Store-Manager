@@ -1,7 +1,7 @@
 const express = require('express');
 const { productsController, salesController } = require('./controllers');
 const validationRegister = require('./middlewares/validationRegister');
-const validateRegisterNewSale = require('./middlewares/validationRegisterSale');
+// const validateRegisterNewSale = require('./middlewares/validationRegisterSale');
 
 const app = express();
 
