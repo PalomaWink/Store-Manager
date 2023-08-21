@@ -11,7 +11,13 @@ const allSales = async (_req, res) => {
   return res.status(status).json(data);
 };
 
+const registerSale = async (req, res) => {
+  const { data, status } = await saleService.registerNewSale(req.body);
+  return res.status(status).json(data);
+};
+
 module.exports = {
   saleId,
   allSales,
+  registerSale,
 };

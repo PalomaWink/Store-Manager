@@ -15,6 +15,7 @@ describe('Testando Middleware', function () {
     validationNewProduct(req, res, next);
     expect(next).to.have.been.calledWith();
   });
+
   it('Testando validacao do middleware caso name seja vazio', function () {
     const next = sinon.stub().returns();
     const req = {
@@ -28,10 +29,25 @@ describe('Testando Middleware', function () {
     expect(res.json).to.have.been.calledWith({ message: '"name" is required' });
     expect(res.status).to.have.been.calledWith(400);
   });
+
   it('Testando validacao do middleware caso o nome tenha menos de 5 letras', function () {
     const next = sinon.stub().returns();
     const req = {
       body: { name: 'hh' }, 
+    };
+    const res = {
+      status: sinon.stub().returnsThis(),
+      json: sinon.stub(),
+    };
+    validationNewProduct(req, res, next);
+    expect(res.json).to.have.been.calledWith({ message: '"name" length must be at least 5 characters long' });
+    expect(res.status).to.have.been.calledWith(422);
+  });
+
+  it('Testando validacao do middleware caso o nome tenha 5 letras', function () {
+    const next = sinon.stub().returns();
+    const req = {
+      body: { name: 'abcde' }, 
     };
     const res = {
       status: sinon.stub().returnsThis(),

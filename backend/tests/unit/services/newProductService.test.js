@@ -12,4 +12,8 @@ describe('Realizando testes para cadastrar novo produto - NEW PRODUCT SERVICE', 
     expect(responseService.data).to.deep.equal({ id: 2, name: 'Fishbones' });
     expect(responseService.status).to.equal(201);
   });
+  
+  afterEach(function () {
+    sinon.restore();
+  });
 });
