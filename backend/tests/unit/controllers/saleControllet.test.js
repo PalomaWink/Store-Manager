@@ -9,7 +9,7 @@ const { saleService } = require('../../../src/services');
 const { salesController } = require('../../../src/controllers');
 const { saleList, returnMockSaleList, saleListId, returnMockId } = require('../mocks/sale.mock');
 
-describe('Realizando testes - SALE SERVICE', function () {
+describe('Realizando testes - SALE CONTROLLER', function () {
   it('Retorna a lista de produtos', async function () {
     sinon.stub(saleService, 'findAllSales').resolves(returnMockSaleList);
     const res = {

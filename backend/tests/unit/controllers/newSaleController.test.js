@@ -5,7 +5,7 @@ const sinonChai = require('sinon-chai');
 const { expect } = chai;
 chai.use(sinonChai);
 
-const { saleService } = require('../../../src/services');
+const { saleService, productsService } = require('../../../src/services');
 const { salesController } = require('../../../src/controllers');
 
 const { newSaleMockWithoutId, newSaleMock } = require('../mocks/sale.mock');
@@ -13,6 +13,7 @@ const { newSaleMockWithoutId, newSaleMock } = require('../mocks/sale.mock');
 describe('Realizando testes cadastrando uma nova venda - SALE CONTROLLER', function () {
   it('É possivel cadastrar uma nova venda no banco', async function () {
     sinon.stub(saleService, 'registerNewSale').resolves({ data: newSaleMock, status: 201 });
+    sinon.stub(productsService, 'findByIdProducts').resolves({ data: {}, status: 200 });
     const res = {
       status: sinon.stub().returnsThis(),
       json: sinon.stub(),
