@@ -18,5 +18,6 @@ app.get('/sales', salesController.allSales);
 app.get('/sales/:id', salesController.saleId);
 app.post('/products', validationRegister, productsController.newProduct);
 app.post('/sales', validateRegisterNewSale, salesController.registerSale);
+app.put('/products/:id', validationRegister, productsController.productUpdate);
 
 module.exports = app;
