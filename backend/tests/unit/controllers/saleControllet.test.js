@@ -17,8 +17,8 @@ describe('Realizando testes - SALE CONTROLLER', function () {
       json: sinon.stub(),
     };
     const req = {};
-    const result = await salesController.allSales(req, res);
-    console.log(result);
+    await salesController.allSales(req, res);
+
     expect(res.json).to.have.been.calledWith(saleList);
     expect(res.status).to.have.been.calledWith(200);
   });
