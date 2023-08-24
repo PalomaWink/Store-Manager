@@ -2,7 +2,7 @@ const { expect } = require('chai');
 const sinon = require('sinon');
 const validationNewProduct = require('../../src/middlewares/validationRegister');
 
-describe('Testando Middleware', function () {
+describe('Testando Middleware "ValidationRegister"', function () {
   it('Testando validacao do middleware para fazer um post', function () {
     const next = sinon.stub().returns();
     const req = {

@@ -20,7 +20,6 @@ const registerNewProduct = async (product) => {
 
 const updateProducts = async (name, id) => {
   const updateProduct = await productsModel.updateProduct(name, id);
-  console.log(updateProduct);
   return { status: 200, data: updateProduct };
 };
 

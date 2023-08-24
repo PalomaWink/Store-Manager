@@ -36,6 +36,8 @@ const returnMistakeName = { message: '"name" is required' };
 
 const returnMistakeNameLength = { message: '"name" length must be at least 5 characters long' };
 
+const updateProduct = { id: 1, name: 'Capa do Super-Homem' };
+
 module.exports = { 
   productList, 
   firstProduct,
@@ -44,4 +46,5 @@ module.exports = {
   registerNewProduct,
   returnMistakeName,
   returnMistakeNameLength,
+  updateProduct,
 };
