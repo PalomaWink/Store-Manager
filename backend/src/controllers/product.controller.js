@@ -21,6 +21,7 @@ const productUpdate = async (req, res) => {
   const { id } = req.params;
  
   const result = await productsService.findByIdProducts(id);
+  console.log(result);
 
   if (result.data.id !== Number(id)) {
     return res.status(404).json({ message: 'Product not found' });
@@ -29,9 +30,21 @@ const productUpdate = async (req, res) => {
   return res.status(status).json(data);
 };
 
+const deleteById = async (req, res) => {
+  const { id } = req.params;
+  const result = await productsService.findByIdProducts(id);
+
+  if (result.data.id !== Number(id)) {
+    return res.status(result.status).json(result.data);
+  }
+  const { status, data } = await productsService.deleteProducts(id);
+  return res.status(status).json(data);
+};
+
 module.exports = {
   productsId,
   allProducts,
   newProduct,
   productUpdate,
+  deleteById,
 };

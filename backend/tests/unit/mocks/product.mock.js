@@ -38,6 +38,17 @@ const returnMistakeNameLength = { message: '"name" length must be at least 5 cha
 
 const updateProduct = { id: 1, name: 'Capa do Super-Homem' };
 
+const productListWithDelete = [
+  {
+    id: 2,
+    name: 'Traje de encolhimento',
+  },
+  {
+    id: 3,
+    name: 'Escudo do Capitão América',
+  },
+];
+
 module.exports = { 
   productList, 
   firstProduct,
@@ -47,4 +58,5 @@ module.exports = {
   returnMistakeName,
   returnMistakeNameLength,
   updateProduct,
+  productListWithDelete,
 };

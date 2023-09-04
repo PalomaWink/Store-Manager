@@ -30,9 +30,16 @@ const updateProduct = async (name, id) => {
   return camelize(product);
 };
 
+const deleteProduct = async (id) => {
+  const query = 'DELETE FROM products WHERE id = ?';
+  const product = await connection.execute(query, [id]);
+  return camelize(product);
+};
+
 module.exports = {
   findById,
   findAllProducts,
   insertNewProduct,
   updateProduct,
+  deleteProduct,
 };

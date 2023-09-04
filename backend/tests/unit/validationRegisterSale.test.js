@@ -42,6 +42,7 @@ describe('Testando Middleware "validateRegisterNewSale"', function () {
       status: sinon.stub().returnsThis(),
       json: sinon.stub(),
     };
+    
     validateRegisterNewSale(req, res, next);
     expect(res.json).to.have.been.calledWith({ message: '"quantity" is required' });
     expect(res.status).to.have.been.calledWith(400);
@@ -90,5 +91,22 @@ describe('Testando Middleware "validateRegisterNewSale"', function () {
     validateRegisterNewSale(req, res, next);
     expect(res.json).to.have.been.calledWith({ message: '"productId" is required' });
     expect(res.status).to.have.been.calledWith(400);
+  });
+
+  it('Retorna true quando pelo menos um item possui quantidade menor ou igual a 1', function () {
+    const req = {
+      body: [
+        { quantity: 2 },
+        { quantity: 0 },
+        { quantity: 3 },
+      ],
+    };
+  
+    const isValidateQuantity = req.body.every((item) => item.quantity >= 1);
+    expect(isValidateQuantity).to.be.equal(false);
+  });
+
+  afterEach(function () {
+    sinon.restore();
   });
 });

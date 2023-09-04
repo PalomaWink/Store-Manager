@@ -23,9 +23,15 @@ const updateProducts = async (name, id) => {
   return { status: 200, data: updateProduct };
 };
 
+const deleteProducts = async (id) => {
+  const result = await productsModel.deleteProduct(id);
+  return { status: 204, data: result };
+};
+
 module.exports = {
-    findByIdProducts,
-    findAllProducts,
-    registerNewProduct,
-    updateProducts,
+  findByIdProducts,
+  findAllProducts,
+  registerNewProduct,
+  updateProducts,
+  deleteProducts,
 };

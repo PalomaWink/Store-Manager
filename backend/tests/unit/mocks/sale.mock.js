@@ -103,6 +103,20 @@ const newSaleMockWithoutId = [
   },
 ];
 
+const newSaleMockWithError = {
+  id: 3,
+  itemsSold: [
+    {
+      productId: 20,
+      quantity: 1,
+    },
+    {
+      productId: 2,
+      quantity: 5,
+    },
+  ],
+};
+
 module.exports = {
   saleList,
   saleListId,
@@ -112,4 +126,5 @@ module.exports = {
   returnMockSaleList,
   newSaleMock,
   newSaleMockWithoutId,
+  newSaleMockWithError,
 };
