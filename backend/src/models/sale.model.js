@@ -40,8 +40,15 @@ const newRegisterSale = async (products) => {
   return { id: saleId, itemsSold };
 };
 
+const deleteSale = async (id) => {
+  const query = 'DELETE FROM sales WHERE id = ?';
+  const product = await connection.execute(query, [id]);
+  return camelize(product);
+};
+
 module.exports = {
   saleFindById,
   findAllSales,
   newRegisterSale,
+  deleteSale,
 };

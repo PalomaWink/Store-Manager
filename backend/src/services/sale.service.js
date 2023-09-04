@@ -17,9 +17,15 @@ const registerNewSale = async (products) => {
   const newSales = await saleModel.newRegisterSale(products);
   return { status: 201, data: newSales };
 };
+
+const deleteSale = async (id) => {
+  const result = await saleModel.deleteSale(id);
+  return { status: 204, data: result };
+};
   
 module.exports = {
   findByIdSales,
   findAllSales,
   registerNewSale,
+  deleteSale,
 };
