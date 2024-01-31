@@ -1,6 +1,6 @@
 # Store Manager
 
-Essa aplicação se trata de uma API RESTful utilizando a arquitetura em camadas. a API que foi construida é um sistema de gerenciamento de vendas em que é possível criar, visualizar, deletar e atualizar produtos e vendas. Foi utilizado o banco de dados MySQL para a gestão de dados e desenvolvidos testes para garantir as funcionalidade das implementações.
+Essa aplicação se trata de uma API RESTful utilizando a arquitetura em camadas. A API que foi construida é um sistema de gerenciamento de vendas em que é possível criar, visualizar, deletar e atualizar produtos e vendas. Foi utilizado o banco de dados MySQL para a gestão de dados e desenvolvidos testes para garantir as funcionalidade das implementações.
 
 ## Tecnologias Utilizadas
 
